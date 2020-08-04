@@ -1,4 +1,5 @@
-<include a CircleCI status badge, here>
+[![<ORG_NAME>](https://circleci.com/gh/edlc/operationalize-microservice-kubernetes.svg?style=svg)](https://circleci.com/gh/edlc/operationalize-microservice-kubernetes)
+
 
 ## Project Overview
 
