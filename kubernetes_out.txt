@@ -1,4 +1,0 @@
-pod/ml-predict-house-price created
-NAME                     READY   STATUS              RESTARTS   AGE
-ml-predict-house-price   0/1     ContainerCreating   0          0s
-service/ml-predict-house-price exposed

@@ -1,1 +1,30 @@
-<paste log output from Kubernetes-mediated prediction, here>
+(.devops) edison@edison-VirtualBox:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_kubernetes.sh 
+pod/ml-predict-house-price created
+NAME                     READY   STATUS              RESTARTS   AGE
+ml-predict-house-price   0/1     ContainerCreating   0          0s
+service/ml-predict-house-price exposed
+
+(.devops) edison@edison-VirtualBox:~/DevOps_Microservices/project-ml-microservice-kubernetes$ minikube service ml-predict-house-price
+|-----------|------------------------|-------------|-------------------------|
+| NAMESPACE |          NAME          | TARGET PORT |           URL           |
+|-----------|------------------------|-------------|-------------------------|
+| default   | ml-predict-house-price |        8000 | http://172.17.0.3:31907 |
+|-----------|------------------------|-------------|-------------------------|
+🎉  Opening service default/ml-predict-house-price in default browser...
+
+(.devops) edison@edison-VirtualBox:~/DevOps_Microservices/project-ml-microservice-kubernetes$ kubectl get all
+NAME                         READY   STATUS              RESTARTS   AGE
+pod/ml-predict-house-price   0/1     ContainerCreating   0          113s
+
+NAME                             TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/kubernetes               ClusterIP      10.96.0.1       <none>        443/TCP          3m49s
+service/ml-predict-house-price   LoadBalancer   10.103.227.27   <pending>     8000:31907/TCP   113s
+
+(.devops) edison@edison-VirtualBox:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./make_prediction.sh 
+Port: 31907
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
